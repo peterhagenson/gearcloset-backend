@@ -7,6 +7,8 @@ app.use(cors())
 
 const loginRouter = require('./routes/login.router.js');
 app.use('/login', loginRouter);
+const registerRouter = require('./routes/register.router.js');
+app.use('/register', registerRouter)
 
 
 
