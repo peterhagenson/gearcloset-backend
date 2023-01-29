@@ -26,11 +26,11 @@ app.use('/register', registerRouter)
 
 
 
-app.listen(port, () => {
+/*app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-})
+})*/
 
-/*
+
 const start = async () => {
     try {
         console.log(port)
@@ -43,4 +43,4 @@ const start = async () => {
     }
 }
 
-start()*/
+start()
