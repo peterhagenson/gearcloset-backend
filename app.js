@@ -33,6 +33,7 @@ app.use('/register', registerRouter)
 
 const start = async () => {
     try {
+        console.log(process.envPORT, process.env.MONGO_URI)
         await db.connectDB(process.env.MONGO_URI)
         app.listen(port, () => {
             console.log(`App listening on port ${port}`)
