@@ -13,6 +13,8 @@ import User from '../models/user.js'
 
 //const register = async (req, res) => {
 router.post('/', async (req, res) => {
+    console.log('in post credentials', req.body)
+
     try {
         //const credentials = req.body;
         const user = await User.create(req.body)
