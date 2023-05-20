@@ -2,11 +2,12 @@
 
 
 import express from 'express'
-import bodyParser from 'body-parser'
+// import bodyParser from 'body-parser'
 import cors from 'cors'
-//require('dotenv').config()
+import fetch from 'node-fetch'
 import dotenv from 'dotenv';
 dotenv.config()
+
 
 
 const app = express()
@@ -15,26 +16,24 @@ const port = process.env.PORT
 //const db = require('./db/connect.js')
 import connectDB from './db/connect.js'
 
+app.use(express.json())
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.use(cors())
 
 
-//const loginRouter = require('./routes/login.router.js');
 import loginRouter from './routes/login.router.js'
 app.use('/login', loginRouter);
-//const registerRouter = require('./routes/register.router.js');
 import registerRouter from './routes/register.router.js'
 app.use('/register', registerRouter)
 
 
-
-/*app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})*/
+// fetch("https://catfact.ninja/breeds?limit=1")
+//     .then((res) => res.json())
+//     .then((res) => console.log(res.data))
 
 
 const start = async () => {
